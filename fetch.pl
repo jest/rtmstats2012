@@ -1,6 +1,5 @@
 use common::sense;
 
-use lib 'local/lib/perl5';
 use Net::Twitter;
 use JSON;
 use IO::All -utf8;
