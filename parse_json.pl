@@ -13,6 +13,7 @@ my %qr = (
 my $strp = DateTime::Format::Strptime->new(pattern => '%a, %d %b %Y %H:%M:%S %z');
 @ARGV = ('-') if !@ARGV;
 
+say join ",", qw(lang day tim cnt);
 for my $fname (@ARGV) {
 	my $cnt < io $fname;
 	my $answer = from_json $cnt;
@@ -31,7 +32,7 @@ for my $fname (@ARGV) {
 		}
 		if ($matched) {
 			my $dt = $strp->parse_datetime($r->{created_at});
-			say join ",", $r->{iso_language_code}, $r->{created_at}, $dt->ymd, $dt->hms, $dt->time_zone, $num; 
+			say join ",", $r->{iso_language_code}, $dt->ymd, $dt->hms, $num; 
 		} else {
 #			say $txt;
 		}
