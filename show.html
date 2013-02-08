@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="dygraph-combined.js"></script>
+  </head>
+
+  <body>
+  <div style="float:left">
+	<div id="graph1div"></div></div><div style="float:right"><div id="graph2div"></div></div>
+	<script type="text/javascript">
+	new Dygraph(
+		document.getElementById("graph1div"),
+		"tweets.csv",
+		{
+			logscale : true,
+			showRoller : true,
+			rollPeriod : 50
+		}
+	);
+	
+	new Dygraph(
+		document.getElementById("graph2div"),
+		"histo.csv",
+		{
+			logscale : true
+		}
+	);
+	</script>
+  </body>
+</html>
